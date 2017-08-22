@@ -5,6 +5,11 @@ import ArticleView from './views/ArticleView.vue'
 import CommentView from './views/CommentView.vue'
 import UserView from './views/UserView.vue'
 
+
+//web组件
+import webComponents from './views/webComponents.vue'
+
+
 Vue.use(Router)
 
 // Story view factory
@@ -17,9 +22,19 @@ function createStoriesView (type) {
   }
 }
 
+function creatWebComponents(){
+    return {
+       render (createElement) {
+        return createElement(webComponents)
+      }
+    }
+}
+
+
 export default new Router({
   // mode: 'abstract',
   routes: [
+    { path: '/webComponents', component: creatWebComponents() },
     { path: '/top', component: createStoriesView('top') },
     { path: '/new', component: createStoriesView('new') },
     { path: '/show', component: createStoriesView('show') },

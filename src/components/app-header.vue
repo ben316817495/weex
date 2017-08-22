@@ -1,12 +1,15 @@
 <template>
   <div class="header">
-    <div class="logo" @click="jump('/')">
+    <!-- <div class="logo" @click="jump('/')">
       <image class="image" src="https://news.ycombinator.com/favicon.ico"></image>
-    </div>
+    </div> -->
     <div class="nav">
       <div class="link" @click="jump('/top')">
         <text class="title">Top</text>
       </div>
+       <div class="link" @click="jump('/webComponents')">
+        <text class="title">web</text>
+      </div> 
       <div class="link" @click="jump('/new')">
         <text class="title">New</text>
       </div>
@@ -50,7 +53,7 @@
   .nav {
     display: flex;
     position: absolute;
-    left: 120px;
+    left: 40px;
     top: 35px;
     flex-direction: row;
     flex-wrap: nowrap;
