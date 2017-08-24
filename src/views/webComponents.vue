@@ -12,7 +12,7 @@
 
 <script>
     // const webview = weex.requireModule('webview')
-    let windowHeight = (WXEnvironment.deviceHeight -50 )+'px'
+    let windowHeight = WXEnvironment.deviceHeight+'px'
     let windowWidth =WXEnvironment.deviceWidth +'px'
     
     import AppHeader from '../components/app-header.vue'
