@@ -2,7 +2,7 @@
     <div class="webComponents-view">
          <!-- <app-header></app-header>  -->
        
-        <web :src="url" class="webview" :style="{'height':windowHeight,'width':windowWidth}"></web>
+        <web :src="url" class="webview" :style="{'height':windowHeight,'width':windowWidth}"  @pagestart="start" @pagefinish="finish"></web>
        
         <!-- <div class="loading" v-if="loading">
             <text class="loading-text">loading ...</text>
@@ -12,6 +12,7 @@
 
 <script>
     // const webview = weex.requireModule('webview')
+    const modal = weex.requireModule('modal')
     let windowHeight = WXEnvironment.deviceHeight+'px'
     let windowWidth =WXEnvironment.deviceWidth +'px'
     
@@ -27,7 +28,12 @@
             }
         },
         methods:{
-
+            start(){
+                 modal.toast({ message: 'pagestart' })
+            },
+            finish (event) {
+                modal.toast({ message: 'pagefinish' })
+            },
         },
      }
 </script>
