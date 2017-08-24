@@ -1,12 +1,12 @@
 <template>
     <div class="webComponents-view">
-        <app-header></app-header>
+         <!-- <app-header></app-header>  -->
        
-              <web :src="url" class="webview" :style="{'height':windowHeight,'width':windowWidth}"></web>
+        <web :src="url" class="webview" :style="{'height':windowHeight,'width':windowWidth}"></web>
        
-        <div class="loading" v-if="loading">
-            <text class="loading-text">{{windowHeight}}</text>
-        </div>
+        <!-- <div class="loading" v-if="loading">
+            <text class="loading-text">loading ...</text>
+        </div> -->
     </div>
 </template>
 
@@ -21,7 +21,7 @@
         data () {
             return {
                 loading: true,
-                url:'https://www.baidu.com/',
+                url:'https://ben316817495.github.io/mixedApplication/showpage/',
                 windowHeight:windowHeight,
                 windowWidth:windowWidth,
             }
