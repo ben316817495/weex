@@ -3,8 +3,8 @@
          <!-- <app-header></app-header>  -->
         
         <loading v-if="loading" :style="{'height':windowHeight}"></loading>
-        <networkError v-if="networkError"></networkError>
-        <web :src="url" class="webview" :style="{'height':windowHeight,'width':windowWidth}"  @pagestart="start" @pagefinish="finish"></web>
+        <networkError v-if="networkError"@click="jump('/webComponents')"></networkError>
+        <web :src="url" class="webview" :style="{'height':windowHeight,'width':windowWidth}"  @pagestart="start" @pagefinish="finish"  @error="error"></web>
        
         <!-- -->
     </div>
@@ -38,7 +38,11 @@
             finish (event) {
                 this.loading = false;
             },
-
+            error(){
+                 this.loading = false;
+                this.networkError = true;
+            },
+            
         },
      }
 </script>

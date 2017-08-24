@@ -34,7 +34,6 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-image: url('../assets/img/123demo.png')  */
 }
 
 .loading-text {
